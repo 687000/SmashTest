@@ -24,7 +24,6 @@
         Navigate to 'mailinator.com'
         Type {Random Email} into 'input[id="inboxfieldsm"]'
         Click [button, 'Go!']
-        Wait '2' seconds
         Refresh
         Wait until 'target email' is visible (up to '10' secs)
         Click 'target email'
@@ -45,7 +44,6 @@
     }
         ..
         Mailinator to Sign Up Page
-        Wait '3' seconds
         Type 'Hfyz2017!' into 'Password'
         Click 'Accept Terms'
         Click 'Create Account'
@@ -77,7 +75,6 @@
     Type {Org Admin Email} into 'input[type="text"]'
     Type {Org Admin Password} into 'input[type="password"]'
     Click [button]
-    Wait '2' seconds
     verify at page 'sandbox.moxo.com/web/#/timeline'
     - Org admin can login
 
