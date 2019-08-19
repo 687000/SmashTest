@@ -162,9 +162,7 @@
     - Client user login and view the timeline
 
 //Test Cases
-//Open Firefox
-//Open Safari
-Open Chrome // run exclusively with --groups=chrome
+Open Chrome
 
     Test Case 'Christine' 'liujianiljn@gmail.com' 'Hfyz2017!' 'Random'
     //  Input preferred Org Admin Name, existed Org Admin Email and Org Admin Password.
