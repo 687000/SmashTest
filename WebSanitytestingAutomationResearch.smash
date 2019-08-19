@@ -160,8 +160,8 @@
     - Client user login and will be redirected to the download app page
 
 //Test Cases
-Open Firefox
-Open Safari
+//Open Firefox
+//Open Safari
 Open Chrome // run exclusively with --groups=chrome
 
     Test Case 'Christine' 'liujianiljn@gmail.com' 'Hfyz2017!' 'Random'
