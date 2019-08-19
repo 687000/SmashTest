@@ -161,7 +161,7 @@
 //    verify at page 'sandbox.moxo.com/web/#/calendar'
 //    - Client user login and view the timeline
     verify at page 'sandbox.moxo.com/web/#/downloadapp'
-    -Client user login and will be redirected to the download app page
+    - Client user login and will be redirected to the download app page
 
 //Test Cases
 Open Chrome
