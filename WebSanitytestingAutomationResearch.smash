@@ -44,7 +44,7 @@
     }
         ..
         Mailinator to Sign Up Page
-        Type 'Hfyz2017!' into 'Password'
+        Type 'Moxtra!' into 'Password'
         Click 'Accept Terms'
         Click 'Create Account'
         Click [button,'Next']
@@ -54,7 +54,7 @@
     Navigate to 'sandbox.moxo.com'
     Type {Random Email} into 'input[type="text"]'
     Type '@mailinator.com' into 'input[type="text"]'
-    Type 'Hfyz2017!' into 'input[type="password"]'
+    Type 'Password2019!' into 'input[type="password"]'
     Click [button, 'Log In']
 
 * User Log Out
@@ -154,7 +154,7 @@
     Go Back
     Wait until [button,2nd] is visible (up to '10' secs)
     Click [button,2nd]
-    Type 'Hfyz2017!' into 'input[type="password"]'
+    Type 'Password2019!' into 'input[type="password"]'
     Click [button, 'Log In']
     verify at page 'sandbox.moxo.com/web/#/downloadapp'
     - Client user login and will be redirected to the download app page
