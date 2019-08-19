@@ -47,6 +47,7 @@
         Type 'Moxtra!' into 'Password'
         Click 'Accept Terms'
         Click 'Create Account'
+        Wait until [button,'Next'] is visible (up to '10' secs)
         Click [button,'Next']
 
 * User Login ..
