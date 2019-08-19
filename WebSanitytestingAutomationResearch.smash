@@ -1,4 +1,3 @@
-//Helper functions
 * Find User from Mailinator
     * Random Email Address {
         var result           = '';
@@ -32,24 +31,6 @@
         Switch to window whose url contains 'sandbox.moxo.com'
         Click 'Log Out'
 
-* Mailinator to Sign Up Page Firefox
-    Button {
-        props({
-            'Join Now': `selector "#body > tbody > tr > td > div > div:nth-child(5) > table > tbody > tr > td > span > a"`,
-            'Log Out': `selector "#mxBody > div.el-dialog__wrapper > div > div.el-dialog__body > div.content-button-wrapper > button.el-button.btn-block.el-button--danger"`,
-            'target email':`.ng-binding,innertext "oxtra"`
-        });
-    }
-        ..
-        Navigate to 'mailinator.com'
-        Type {Random Email} into 'input[id="inboxfield"]'
-        Click [button, 'Go!']
-        Wait until 'target email' is visible (up to '10' secs)
-        Click 'target email'
-        Switch to iframe '#msg_body'
-        Native click 'Join Now'
-        Switch to the '2nd' window
-
 * User Sign Up
     Button {
         props({
@@ -65,23 +46,7 @@
         Type 'Password2019!' into 'Password'
         Click 'Accept Terms'
         Click 'Create Account'
-        Click [button,'Next']
-
-* User Sign Up Firefox
-    Button {
-        props({
-            'Password': `selector "#mxPage > div > div > div:nth-child(2) > div > div > div > div.nonsign-box > div > div:nth-child(2) > form > div:nth-child(4) > div > div > input"`,
-            'Accept Terms': `selector "#mxPage > div > div > div:nth-child(2) > div.main-view > div > div.nonsign-main-box > div > div > div:nth-child(2) > form > div.el-form-item.mx-el-checkbox-bordered.nonsign-input.el-form-item--feedback > div > label > span.el-checkbox__input > span"`,
-            'Create Account': `selector "#mxPage > div > div > div:nth-child(2) > div.main-view > div > div.nonsign-main-box > div > div > div:nth-child(2) > form > div:nth-child(6) > div > button > span"`,
-            'Setting Skip': `selector "#mxPage > div > div > div:nth-child(2) > div.main-view > div > div.nonsign-main-box > div > div:nth-child(2) > div:nth-child(3) > div > button"`
-
-        });
-    }
-        ..
-        Mailinator to Sign Up Page Firefox
-        Type 'Password2019!' into 'Password'
-        Click 'Accept Terms'
-        Click 'Create Account'
+        Wait until [button,'Next'] is visible (up to '10' secs)
         Click [button,'Next']
 
 * User Login ..
@@ -101,17 +66,6 @@
         ..
         Navigate to 'sandbox.moxo.com'
         Click [li,5th]
-        Click 'Log out'
-
-* User Log Out Firefox
-    Button {
-        props({
-            'Log out': `selector "#mxPage > section > section > header > div.mx-settings__actions > button"`
-        });
-    }
-        ..
-        Navigate to 'sandbox.moxo.com'
-        Click [li,7th]
         Click 'Log out'
 
 //Functions for Test Cases
@@ -157,10 +111,6 @@
     User Sign Up
     - Internal user can sign up
 
-* Internal User Sign Up Firefox ..
-    User Sign Up Firefox
-    - Internal user can sign up
-
 * Internal User Login ..
     User Login
     Wait until [li,4th] is visible (up to '30' secs)
@@ -197,10 +147,6 @@
     User Sign Up
     - Client user can sign up
 
-* Client User Sign Up Firefox ..
-    User Sign Up Firefox
-    - Client user can sign up
-
 * Client User Login
     ..
     Go Back
@@ -209,25 +155,18 @@
     Click [button,2nd]
     Type 'Password2019!' into 'input[type="password"]'
     Click [button, 'Log In']
-    Wait until [li,4th] is visible (up to '30' secs)
-    Click [li,4th]
+    Wait until [li,3rd] is visible (up to '30' secs)
+    Click [li,3rd]
     verify at page 'sandbox.moxo.com/web/#/calendar'
     - Client user login and view the timeline
 
-//Open Chrome // run exclusively with --groups=chrome
-
-//    Test Case 'Christine' 'liujianiljn@gmail.com' 'Hfyz2017!' 'Random'
-
 //Test Cases
-
+//Open Firefox
 //Open Safari
-//Open Chrome // run exclusively with --groups=chrome
+Open Chrome // run exclusively with --groups=chrome
 
-//    Test Case 'Christine' 'liujianiljn@gmail.com' 'Hfyz2017!' 'Random'
+    Test Case 'Christine' 'liujianiljn@gmail.com' 'Hfyz2017!' 'Random'
     //  Input preferred Org Admin Name, existed Org Admin Email and Org Admin Password.
-
-Open Firefox
-    Test Case for Firebox 'Christine' 'liujianiljn@gmail.com' 'Hfyz2017!' 'nn5e1'
 
 * Test Case {Org Admin Name} {Org Admin Email} {Org Admin Password} {Random Email}
     ..
@@ -243,18 +182,3 @@ Open Firefox
             Client User Sign Up
             Client User Login
 
-* Test Case for Firebox {Org Admin Name} {Org Admin Email} {Org Admin Password} {Random Email}
-    ..
-    Org Admin Login
-    Org Admin Add New Internal User
-    User Log Out Firefox
-    Internal User Sign Up Firefox
-    Internal User Login
-
-        User Log Out
-            ..
-            Org Admin Login
-            Org Admin Add Client User
-            User Log Out Firefox
-            Client User Sign Up Firefox
-            Client User Login
