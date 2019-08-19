@@ -44,7 +44,7 @@
     }
         ..
         Mailinator to Sign Up Page
-        Type 'Moxtra!' into 'Password'
+        Type 'Password2019!' into 'Password'
         Click 'Accept Terms'
         Click 'Create Account'
         Wait until [button,'Next'] is visible (up to '10' secs)
