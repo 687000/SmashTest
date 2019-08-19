@@ -1,3 +1,4 @@
+//Helper functions
 * Find User from Mailinator
     * Random Email Address {
         var result           = '';
@@ -31,7 +32,42 @@
         Switch to window whose url contains 'sandbox.moxo.com'
         Click 'Log Out'
 
+* Mailinator to Sign Up Page Firefox
+    Button {
+        props({
+            'Join Now': `selector "#body > tbody > tr > td > div > div:nth-child(5) > table > tbody > tr > td > span > a"`,
+            'Log Out': `selector "#mxBody > div.el-dialog__wrapper > div > div.el-dialog__body > div.content-button-wrapper > button.el-button.btn-block.el-button--danger"`,
+            'target email':`.ng-binding,innertext "oxtra"`
+        });
+    }
+        ..
+        Navigate to 'mailinator.com'
+        Type {Random Email} into 'input[id="inboxfield"]'
+        Click [button, 'Go!']
+        Wait until 'target email' is visible (up to '10' secs)
+        Click 'target email'
+        Switch to iframe '#msg_body'
+        Native click 'Join Now'
+        Switch to window whose url contains 'sandbox.moxo.com'
+
 * User Sign Up
+    Button {
+        props({
+            'Password': `.el-input__inner`,
+            'Accept Terms': `.el-form-item__content"`,
+            'Create Account': `selector "#mxPage > div > div > div:nth-child(2) > div.main-view > div > div.nonsign-main-box > div > div > div:nth-child(2) > form > div:nth-child(6) > div > button > span"`,
+            'Setting Skip': `selector "#mxPage > div > div > div:nth-child(2) > div.main-view > div > div.nonsign-main-box > div > div:nth-child(2) > div:nth-child(3) > div > button"`
+
+        });
+    }
+        ..
+        Mailinator to Sign Up Page
+        Type 'Password2019!' into 'Password'
+        Native click 'Accept Terms'
+        Click 'Create Account'
+        Click [button,'Next']
+
+* User Sign Up Firefox
     Button {
         props({
             'Password': `selector "#mxPage > div > div > div:nth-child(2) > div > div > div > div.nonsign-box > div > div:nth-child(2) > form > div:nth-child(4) > div > div > input"`,
@@ -42,11 +78,10 @@
         });
     }
         ..
-        Mailinator to Sign Up Page
+        Mailinator to Sign Up Page Firefox
         Type 'Password2019!' into 'Password'
         Click 'Accept Terms'
         Click 'Create Account'
-        Wait until [button,'Next'] is visible (up to '10' secs)
         Click [button,'Next']
 
 * User Login ..
@@ -66,6 +101,17 @@
         ..
         Navigate to 'sandbox.moxo.com'
         Click [li,5th]
+        Click 'Log out'
+
+* User Log Out Firefox
+    Button {
+        props({
+            'Log out': `selector "#mxPage > section > section > header > div.mx-settings__actions > button"`
+        });
+    }
+        ..
+        Navigate to 'sandbox.moxo.com'
+        Click [li,7th]
         Click 'Log out'
 
 //Functions for Test Cases
@@ -88,7 +134,7 @@
             props({
                 'First Name': `.el-input__inner,2nd`,
                 'Last Name': `.el-input__inner,3rd`,
-                'Email Address': `.el-input__inner,4th`
+                'Email Address': `.el-input__inner,4th`,
             });
         }
             Open Admin Portal
@@ -109,6 +155,10 @@
 
 * Internal User Sign Up ..
     User Sign Up
+    - Internal user can sign up
+
+* Internal User Sign Up Firefox ..
+    User Sign Up Firefox
     - Internal user can sign up
 
 * Internal User Login ..
@@ -147,12 +197,28 @@
     User Sign Up
     - Client user can sign up
 
+* Client User Sign Up Firefox ..
+    User Sign Up Firefox
+    - Client user can sign up
+
 * Client User Login
+    * Client User Log Out
+        Button {
+            props({
+                'Log out': `selector "#mxPage > section > section > header > div.mx-settings__actions > button"`
+            });
+        }
+            ..
+            Navigate to 'sandbox.moxo.com'
+            Click [li,4th]
+            Click 'Log out'
+
     ..
-    Go Back
-    Go Back
-    Wait until [button,2nd] is visible (up to '10' secs)
-    Click [button,2nd]
+    Client User Log Out
+    Clear 'input[type="text"]'
+    Clear 'input[type="password"]'
+    Type {Random Email} into 'input[type="text"]'
+    Type '@mailinator.com' into 'input[type="text"]'
     Type 'Password2019!' into 'input[type="password"]'
     Click [button, 'Log In']
     Wait until [li,3rd] is visible (up to '30' secs)
@@ -160,13 +226,20 @@
     verify at page 'sandbox.moxo.com/web/#/calendar'
     - Client user login and view the timeline
 
-//Test Cases
-//Open Firefox
-//Open Safari
-Open Chrome // run exclusively with --groups=chrome
+//Open Chrome // run exclusively with --groups=chrome
 
-    Test Case 'Christine' 'liujianiljn@gmail.com' 'Hfyz2017!' 'Random'
+//    Test Case 'Christine' 'liujianiljn@gmail.com' 'Hfyz2017!' 'Random'
+
+//Test Cases
+
+//Open Safari
+//Open Chrome // run exclusively with --groups=chrome
+
+//    Test Case 'Christine' 'liujianiljn@gmail.com' 'Hfyz2017!' 'Random'
     //  Input preferred Org Admin Name, existed Org Admin Email and Org Admin Password.
+
+Open Firefox
+    Test Case for Firebox 'Christine' 'liujianiljn@gmail.com' 'Hfyz2017!' 'Random'
 
 * Test Case {Org Admin Name} {Org Admin Email} {Org Admin Password} {Random Email}
     ..
@@ -182,3 +255,17 @@ Open Chrome // run exclusively with --groups=chrome
             Client User Sign Up
             Client User Login
 
+* Test Case for Firebox {Org Admin Name} {Org Admin Email} {Org Admin Password} {Random Email}
+    ..
+    Org Admin Login
+    Org Admin Add New Internal User
+    User Log Out Firefox
+    Internal User Sign Up Firefox
+    Internal User Login
+
+    ..
+    Org Admin Login
+    Org Admin Add Client User
+    User Log Out Firefox
+    Client User Sign Up Firefox
+    Client User Login
