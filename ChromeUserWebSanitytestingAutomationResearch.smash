@@ -119,11 +119,9 @@
     verify at page 'sandbox.moxo.com/web/#/calendar'
     - Internal user can login and view the timeline
 
-//Test Cases
 Open Chrome
 
     Test Case 'Christine' 'liujianiljn@gmail.com' 'Hfyz2017!' 'Random'
-    //  Input preferred Org Admin Name, existed Org Admin Email and Org Admin Password.
 
 * Test Case {Org Admin Name} {Org Admin Email} {Org Admin Password} {Random Email}
     ..
