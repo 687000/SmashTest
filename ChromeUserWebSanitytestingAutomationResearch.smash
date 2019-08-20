@@ -116,7 +116,7 @@
     User Login
     Wait until [li,4th] is visible (up to '30' secs)
     Click [li,4th]
-    verify at page 'sandbox.moxo.com/web/#/calendar'
+    Wait until at page 'sandbox.moxo.com/web/#/calendar'
     - Internal user can login and view the timeline
 
 Open Chrome
