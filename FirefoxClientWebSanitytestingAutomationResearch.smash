@@ -124,50 +124,6 @@
     verify at page 'sandbox.moxo.com/web/#/timeline'
     - Org admin can login
 
-* Org Admin Add New Internal User
-    * Open Admin Portal ..// this is a function declaration
-        Click [li,7th]
-        Click [a]//'Admin Portal'
-
-    * Org Admin Add Internal Users Information ..
-        Button {
-            props({
-                'First Name': `.el-input__inner,2nd`,
-                'Last Name': `.el-input__inner,3rd`,
-                'Email Address': `.el-input__inner,4th`,
-            });
-        }
-            Open Admin Portal
-            Wait until [button, 'Add'] is visible (up to '10' secs)
-            Click [button, 'Add']
-            Type {Org Admin Name} into 'First Name'
-            Type 'Internal User' into 'Last Name'
-            Type {Random Email} into 'Email Address'
-            Type '@mailinator.com' into 'Email Address'
-            Click [button, 'Create']
-
-    ..
-    Find User from Mailinator
-    Navigate to 'sandbox.moxo.com'
-    Org Admin Add Internal Users Information
-    verify [div, 'User invited'] is visible
-    - Org admin can add new internal user
-
-* Internal User Sign Up ..
-    User Sign Up
-    - Internal user can sign up
-
-* Internal User Sign Up Firefox ..
-    User Sign Up Firefox
-    - Internal user can sign up
-
-* Internal User Login ..
-    User Login
-    Wait until [li,4th] is visible (up to '30' secs)
-    Click [li,4th]
-    verify at page 'sandbox.moxo.com/web/#/calendar'
-    - Internal user can login and view the timeline
-
 * Org Admin Add Client User
     * Org Admin Add Client User Information
         Button {
