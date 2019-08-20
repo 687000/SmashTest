@@ -76,7 +76,7 @@
     Type {Org Admin Email} into 'input[type="text"]'
     Type {Org Admin Password} into 'input[type="password"]'
     Click [button]
-    verify at page 'sandbox.moxo.com/web/#/timeline'
+    Wait until at page 'sandbox.moxo.com/web/#/timeline'
     - Org admin can login
 
 * Org Admin Add New Internal User
