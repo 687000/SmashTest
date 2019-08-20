@@ -79,6 +79,31 @@
     verify at page 'sandbox.moxo.com/web/#/timeline'
     - Org admin can login
 
+* Org Admin Add Client User
+    * Org Admin Add Client User Information
+        Button {
+            props({
+                'First Name': `.el-input__inner,2nd`,
+                'Last Name': `.el-input__inner,3rd`,
+                'Email Address': `.el-input__inner,4th`
+            });
+        }
+            ..
+            Type {Org Admin Name} into 'First Name'
+            Type 'Client' into 'Last Name'
+            Type {Random Email} into 'Email Address'
+            Type '@mailinator.com' into 'Email Address'
+            Click [button, 'Invite']
+            verify [div, 'Invite Sent'] is visible
+
+    ..
+    Find User from Mailinator
+    Navigate to 'sandbox.moxo.com'
+    Click [button, 'New']
+    Click [div, 'Invite New Client']
+    Org Admin Add Client User Information
+    - Org admin can add new client user
+
 * Client User Sign Up ..
     User Sign Up
     - Client user can sign up
