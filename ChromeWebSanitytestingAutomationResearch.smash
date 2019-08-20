@@ -156,12 +156,12 @@
     Click [button,2nd]
     Type 'Password2019!' into 'input[type="password"]'
     Click [button, 'Log In']
-//    Wait until [li,3rd] is visible (up to '30' secs)
-//    Click [li,3rd]
-//    verify at page 'sandbox.moxo.com/web/#/calendar'
-//    - Client user login and view the timeline
-    verify at page 'sandbox.moxo.com/web/#/downloadapp'
-    - Client user login and will be redirected to the download app page
+    Wait until [li,3rd] is visible (up to '30' secs)
+    Click [li,3rd]
+    verify at page 'sandbox.moxo.com/web/#/calendar'
+    - Client user login and view the timeline
+//    verify at page 'sandbox.moxo.com/web/#/downloadapp'
+//    - Client user login and will be redirected to the download app page
 
 //Test Cases
 Open Chrome
