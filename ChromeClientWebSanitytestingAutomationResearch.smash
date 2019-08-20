@@ -107,13 +107,6 @@ Open Chrome
 * Test Case {Org Admin Name} {Org Admin Email} {Org Admin Password} {Random Email}
     ..
     Org Admin Login
-    Org Admin Add New Internal User
-    Internal User Sign Up
-    Internal User Login
-
-        User Log Out
-            ..
-            Org Admin Login
-            Org Admin Add Client User
-            Client User Sign Up
-            Client User Login
+    Org Admin Add Client User
+    Client User Sign Up
+    Client User Login
