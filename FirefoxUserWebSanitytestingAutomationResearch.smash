@@ -123,6 +123,31 @@
     Click [li,4th]
     Wait until at page 'sandbox.moxo.com/web/#/calendar'
     - Internal user can login and view the timeline
+    
+* Search
+    Button {
+        props({
+            'Search': `.el-input__inner`,
+            'Contactor':`.search-user-avatar, 1st`
+        });
+    }
+        ..
+        Click [li,1st]
+        Type {Org Admin Email} into 'Search'
+        Click 'Contactor'
+        - Internal User can search Contactor
+
+* Message
+    Button {
+        props({
+            'Chat Button': `.micon-mep-chat, 3rd`,
+            'Message box':`.el-textarea__inner`
+        });
+    }
+        ..
+        Click 'Chat Button'
+        Type 'Test message[enter]' into 'Message box'
+        - Internal User can send message
 
 Open Firefox
     Test Case for Firebox 'Christine' 'liujianiljn@gmail.com' 'Hfyz2017!' 'Random'
@@ -134,4 +159,6 @@ Open Firefox
     Org Admin Log Out
     Internal User Sign Up
     Internal User Login
+    Search
+    Message
 
