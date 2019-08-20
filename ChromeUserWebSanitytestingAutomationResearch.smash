@@ -30,7 +30,6 @@
         Switch to iframe '#msg_body'
         Native click 'Join Now'
         Switch to window whose url contains 'sandbox.moxo.com'
-        Click 'Log Out'
 
 * User Sign Up
     Button {
@@ -69,6 +68,17 @@
         Click [li,5th]
         Click 'Log out'
 
+* Org Admin Log Out
+    Button {
+        props({
+            'Log out': `selector "#mxPage > section > section > header > div.mx-settings__actions > button"`
+        });
+    }
+        ..
+        Navigate to 'sandbox.moxo.com'
+        Click [li,7th]
+        Click 'Log out'
+
 //Functions for Test Cases
 
 * Org Admin Login ..
@@ -79,8 +89,12 @@
     Wait until at page 'sandbox.moxo.com/web/#/timeline'
     - Org admin can login
 
-* Org Admin Add Client User
-    * Org Admin Add Client User Information
+* Org Admin Add New Internal User
+    * Open Admin Portal ..// this is a function declaration
+        Click [li,7th]
+        Click [a]//'Admin Portal'
+
+    * Org Admin Add Internal Users Information ..
         Button {
             props({
                 'First Name': `.el-input__inner,2nd`,
@@ -88,50 +102,41 @@
                 'Email Address': `.el-input__inner,4th`
             });
         }
-            ..
+            Open Admin Portal
+            Wait until [button, 'Add'] is visible (up to '10' secs)
+            Click [button, 'Add']
             Type {Org Admin Name} into 'First Name'
-            Type 'Client' into 'Last Name'
+            Type 'Internal User' into 'Last Name'
             Type {Random Email} into 'Email Address'
             Type '@mailinator.com' into 'Email Address'
-            Click [button, 'Invite']
-            verify [div, 'Invite Sent'] is visible
+            Click [button, 'Create']
 
     ..
     Find User from Mailinator
     Navigate to 'sandbox.moxo.com'
-    Click [button, 'New']
-    Click [div, 'Invite New Client']
-    Org Admin Add Client User Information
-    - Org admin can add new client user
+    Org Admin Add Internal Users Information
+    verify [div, 'User invited'] is visible
+    - Org admin can add new internal user
 
-* Client User Sign Up ..
+* Internal User Sign Up ..
     User Sign Up
-    - Client user can sign up
+    - Internal user can sign up
 
-* Client User Login
-    ..
-    Go Back
-    Go Back
-    Wait until [button,2nd] is visible (up to '10' secs)
-    Click [button,2nd]
-    Type 'Password2019!' into 'input[type="password"]'
-    Click [button, 'Log In']
-    Wait until [li,3rd] is visible (up to '30' secs)
-    Click [li,3rd]
+* Internal User Login ..
+    User Login
+    Wait until [li,4th] is visible (up to '30' secs)
+    Click [li,4th]
     Wait until at page 'sandbox.moxo.com/web/#/calendar'
-    - Client user login and view the timeline
-//    verify at page 'sandbox.moxo.com/web/#/downloadapp'
-//    - Client user login and will be redirected to the download app page
+    - Internal user can login and view the timeline
 
-//Test Cases
 Open Chrome
 
     Test Case 'Christine' 'liujianiljn@gmail.com' 'Hfyz2017!' 'Random'
-    //  Input preferred Org Admin Name, existed Org Admin Email and Org Admin Password.
 
 * Test Case {Org Admin Name} {Org Admin Email} {Org Admin Password} {Random Email}
     ..
     Org Admin Login
-    Org Admin Add Client User
-    Client User Sign Up
-    Client User Login
+    Org Admin Add New Internal User
+    Org Admin Log Out
+    Internal User Sign Up
+    Internal User Login
