@@ -1,0 +1,119 @@
+//Helper functions
+* Find User from Mailinator
+    * Random Email Address {
+        var result           = '';
+        var characters       = 'abcdefghijklmnopqrstuvwxyz0123456789';
+        var charactersLength = characters.length;
+        for ( var i = 0; i < 5; i++ ) {
+            result += characters.charAt(Math.floor(Math.random() * charactersLength));
+        }
+        return result;
+    }
+
+    {Random Email}=Random Email Address
+
+* Mailinator to Sign Up Page
+    Button {
+        props({
+            'Join Now': `selector "#body > tbody > tr > td > div > div:nth-child(5) > table > tbody > tr > td > span > a"`,
+            'Log Out': `selector "#mxBody > div.el-dialog__wrapper > div > div.el-dialog__body > div.content-button-wrapper > button.el-button.btn-block.el-button--danger"`,
+            'target email':`.ng-binding,innertext "oxtra"`
+        });
+    }
+        ..
+        Navigate to 'mailinator.com'
+        Type {Random Email} into 'input[id="inboxfieldsm"]'
+        Click [button, 'Go!']
+        Refresh
+        Wait until 'target email' is visible (up to '10' secs)
+        Click 'target email'
+        Switch to iframe '#msg_body'
+        Native click 'Join Now'
+        Switch to window whose url contains 'sandbox.moxo.com'
+        Click 'Log Out'
+
+* User Sign Up
+    Button {
+        props({
+            'Password': `selector "#mxPage > div > div > div:nth-child(2) > div > div > div > div.nonsign-box > div > div:nth-child(2) > form > div:nth-child(4) > div > div > input"`,
+            'Accept Terms': `selector "#mxPage > div > div > div:nth-child(2) > div.main-view > div > div.nonsign-main-box > div > div > div:nth-child(2) > form > div.el-form-item.mx-el-checkbox-bordered.nonsign-input.el-form-item--feedback > div > label > span.el-checkbox__input > span"`,
+            'Create Account': `selector "#mxPage > div > div > div:nth-child(2) > div.main-view > div > div.nonsign-main-box > div > div > div:nth-child(2) > form > div:nth-child(6) > div > button > span"`,
+            'Setting Skip': `selector "#mxPage > div > div > div:nth-child(2) > div.main-view > div > div.nonsign-main-box > div > div:nth-child(2) > div:nth-child(3) > div > button"`
+
+        });
+    }
+        ..
+        Mailinator to Sign Up Page
+        Type 'Password2019!' into 'Password'
+        Click 'Accept Terms'
+        Click 'Create Account'
+        Wait until [button,'Next'] is visible (up to '10' secs)
+        Click [button,'Next']
+
+* User Login ..
+    User Log Out
+    Navigate to 'sandbox.moxo.com'
+    Type {Random Email} into 'input[type="text"]'
+    Type '@mailinator.com' into 'input[type="text"]'
+    Type 'Password2019!' into 'input[type="password"]'
+    Click [button, 'Log In']
+
+* User Log Out
+    Button {
+        props({
+            'Log out': `selector "#mxPage > section > section > header > div.mx-settings__actions > button"`
+        });
+    }
+        ..
+        Navigate to 'sandbox.moxo.com'
+        Click [li,5th]
+        Click 'Log out'
+
+//Functions for Test Cases
+
+* Org Admin Login ..
+    Navigate to 'sandbox.moxo.com'
+    Type {Org Admin Email} into 'input[type="text"]'
+    Type {Org Admin Password} into 'input[type="password"]'
+    Click [button]
+    verify at page 'sandbox.moxo.com/web/#/timeline'
+    - Org admin can login
+
+* Client User Sign Up ..
+    User Sign Up
+    - Client user can sign up
+
+* Client User Login
+    ..
+    Go Back
+    Go Back
+    Wait until [button,2nd] is visible (up to '10' secs)
+    Click [button,2nd]
+    Type 'Password2019!' into 'input[type="password"]'
+    Click [button, 'Log In']
+    Wait until [li,3rd] is visible (up to '30' secs)
+    Click [li,3rd]
+    verify at page 'sandbox.moxo.com/web/#/calendar'
+    - Client user login and view the timeline
+//    verify at page 'sandbox.moxo.com/web/#/downloadapp'
+//    - Client user login and will be redirected to the download app page
+
+//Test Cases
+Open Chrome
+
+    Test Case 'Christine' 'liujianiljn@gmail.com' 'Hfyz2017!' 'Random'
+    //  Input preferred Org Admin Name, existed Org Admin Email and Org Admin Password.
+
+* Test Case {Org Admin Name} {Org Admin Email} {Org Admin Password} {Random Email}
+    ..
+    Org Admin Login
+    Org Admin Add New Internal User
+    Internal User Sign Up
+    Internal User Login
+
+        User Log Out
+            ..
+            Org Admin Login
+            Org Admin Add Client User
+            Client User Sign Up
+            Client User Login
