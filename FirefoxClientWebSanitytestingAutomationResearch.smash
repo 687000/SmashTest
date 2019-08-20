@@ -239,13 +239,6 @@ Open Firefox
 * Test Case for Firebox {Org Admin Name} {Org Admin Email} {Org Admin Password} {Random Email}
     ..
     Org Admin Login
-    Org Admin Add New Internal User
-    User Log Out Firefox
-    Internal User Sign Up Firefox
-    Internal User Login
-
-    ..
-    Org Admin Login
     Org Admin Add Client User
     User Log Out Firefox
     Client User Sign Up Firefox
