@@ -30,7 +30,6 @@
         Switch to iframe '#msg_body'
         Native click 'Join Now'
         Switch to window whose url contains 'sandbox.moxo.com'
-        Click 'Log Out'
 
 * User Sign Up
     Button {
@@ -67,6 +66,17 @@
         ..
         Navigate to 'sandbox.moxo.com'
         Click [li,5th]
+        Click 'Log out'
+
+* Org Admin Log Out
+    Button {
+        props({
+            'Log out': `selector "#mxPage > section > section > header > div.mx-settings__actions > button"`
+        });
+    }
+        ..
+        Navigate to 'sandbox.moxo.com'
+        Click [li,7th]
         Click 'Log out'
 
 //Functions for Test Cases
@@ -109,17 +119,31 @@
     - Client user can sign up
 
 * Client User Login
+    * Client User Log Out
+        Button {
+            props({
+                'Log out': `selector "#mxPage > section > section > header > div.mx-settings__actions > button"`
+            });
+        }
+            ..
+            Navigate to 'sandbox.moxo.com'
+            Click [li,4th]
+            Click 'Log out'
+
     ..
-    Go Back
-    Go Back
-    Wait until [button,2nd] is visible (up to '10' secs)
-    Click [button,2nd]
+    Client User Log Out
+    Clear 'input[type="text"]'
+    Clear 'input[type="password"]'
+    Type {Random Email} into 'input[type="text"]'
+    Type '@mailinator.com' into 'input[type="text"]'
     Type 'Password2019!' into 'input[type="password"]'
     Click [button, 'Log In']
     Wait until [li,3rd] is visible (up to '30' secs)
     Click [li,3rd]
-    verify at page 'sandbox.moxo.com/web/#/calendar'
+    Wait until at page  'sandbox.moxo.com/web/#/calendar'
     - Client user login and view the timeline
+//    verify at page 'sandbox.moxo.com/web/#/downloadapp'
+//    - Client user login and will be redirected to the download app page
 //    verify at page 'sandbox.moxo.com/web/#/downloadapp'
 //    - Client user login and will be redirected to the download app page
 
@@ -133,5 +157,6 @@ Open Chrome
     ..
     Org Admin Login
     Org Admin Add Client User
+    Org Admin Log Out
     Client User Sign Up
     Client User Login
