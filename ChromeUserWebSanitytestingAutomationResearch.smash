@@ -146,66 +146,14 @@
     Button {
         props({
             'Chat Button': `.micon-mep-chat, 3rd`,
-            'Message box':`.el-textarea__inner`,
-            'Edit options':`.el-dropdown,3rd`,
-            'Edit message':`.el-textarea__inner,2nd`,
-            'Confirm message':`.el-message__content,innertext "Message deleted"`
+            'Message box':`.el-textarea__inner`
         });
     }
         ..
         Click 'Chat Button'
         Type 'Test message[enter]' into 'Message box'
         - Internal User can send message
-        Click 'Edit options'
-        Click [span,'Edit']
-        Clear 'Edit message'
-        Type 'Edited message' into 'Edit message'
-        Click [span,'Save']
-        - Internal User can edit message
-        Click 'Edit options'
-        Click [span,'Delete']
-        Click [button,'Ok']
-        Verify 'Confirm message' is visible
-        - Internal User can delete message
 
-* To-Do
-    Button {
-        props({
-            'Add Subject': `.el-textarea__inner`,
-            'Confirm message':`.el-message__content,innertext "To-Do created"`,
-            'Add To-Do button':`selector "#mxPageBody_Col_2 > div > div.mx-detail-box.mx-panel-box.show-panel-lg.no-header > div.mx-right-panel > section > div > div > div > div > button"`
-        });
-    }
-
-        ..
-        Click [li,'To-Do']
-        Click [button,'Add To-Do']
-        Type 'To-Do' into 'Add Subject'
-        Click 'Add To-Do button'
-        Verify 'Confirm message' is visible
-        - Internal User can add To-Do
-
-* Change Password
-    Button {
-        props({
-            'Current Password': `.el-input__inner,3rd`,
-            'New Password': `.el-input__inner, 4th`
-        });
-    }
-        ..
-        Click [li,5th]
-        Click [button,'Edit']
-        Type 'Password2019!' into 'Current Password'
-        Type 'Password2020!' into 'New Password'
-        Click [button,'Save Changes']
-        Verify at page 'sandbox.moxo.com/web/#/timeline'
-        - Internal User can change Password
-        Click [li,5th]
-        Click [button,'Edit']
-        Type 'Password2020!' into 'Current Password'
-        Type 'Password2019!' into 'New Password'
-        Click [button,'Save Changes']
-        
 Open Chrome
 
     Test Case 'Christine' 'liujianiljn@gmail.com' 'Hfyz2017!' 'Random'
@@ -219,5 +167,3 @@ Open Chrome
     Internal User Login
     Search
     Message
-    To-Do
-    Change Password
