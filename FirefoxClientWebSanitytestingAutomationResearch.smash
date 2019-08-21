@@ -136,14 +136,7 @@
         Native click [button, 'Edit']
         Type 'Password2019!' into 'Current Password'
         Type 'Password2020!' into 'New Password'
-        Native click [button, 'Save Changes']
         - Client User can change password
-        Native click [li,4th]
-        set dimensions to width='1024' height='768'
-        Native click [button, 'Edit']
-        Type 'Password2020!' into 'Current Password'
-        Type 'Password2019!' into 'New Password'
-        Native click [button, 'Save Changes']
         
 Open Firefox
     Test Case for Firebox 'Christine' 'liujianiljn@gmail.com' 'Hfyz2017!' 'Random'
