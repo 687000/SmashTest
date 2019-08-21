@@ -147,6 +147,29 @@
 //    verify at page 'sandbox.moxo.com/web/#/downloadapp'
 //    - Client user login and will be redirected to the download app page
 
+* Change Password
+    Button {
+        props({
+            'Edit': `.mx-settings__btn, intertext "Edit"`,
+            'Current Password':`.el-input__inner,2nd`,
+            'New Password':`.el-input__inner,3rd`
+        });
+    }
+        ..
+        Native click [li,4th]
+        set dimensions to width='1024' height='768'
+        Native click [button, 'Edit']
+        Type 'Password2019!' into 'Current Password'
+        Type 'Password2020!' into 'New Password'
+        Native click [button, 'Save Changes']
+        - Client User can change password
+        Native click [li,4th]
+        set dimensions to width='1024' height='768'
+        Native click [button, 'Edit']
+        Type 'Password2020!' into 'Current Password'
+        Type 'Password2019!' into 'New Password'
+        Native click [button, 'Save Changes']
+        
 //Test Cases
 Open Chrome
 
@@ -160,3 +183,4 @@ Open Chrome
     Org Admin Log Out
     Client User Sign Up
     Client User Login
+    Change Password
