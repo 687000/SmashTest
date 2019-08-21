@@ -7,7 +7,7 @@ Test cases covered:
 - Internal user can sign up 
 - Client user can sign up 
 - Internal user can login and view the timeline 
-- Internal user can search contactor
+- Internal user can search contact
 - Internal user can send, edit, and delete messages
 - Internal user can change password
 - Client user login and view the timeline 
