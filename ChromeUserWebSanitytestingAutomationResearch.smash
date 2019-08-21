@@ -146,13 +146,27 @@
     Button {
         props({
             'Chat Button': `.micon-mep-chat, 3rd`,
-            'Message box':`.el-textarea__inner`
+            'Message box':`.el-textarea__inner`,
+            'Edit options':`.el-dropdown,2nd`,
+            'Edit Message':`.el-textarea__inner,2nd`
+
+
         });
     }
         ..
         Click 'Chat Button'
         Type 'Test message[enter]' into 'Message box'
         - Internal User can send message
+        Click 'Edit options'
+        Click [li,'Edit']
+        Clear 'Edit Message'
+        Type 'Edited message' into 'Edit Message'
+        Click [button, 'Save']
+        - Internal User can edit message
+        Click 'Edit options'
+        Click [li,'Delete']
+        Click [button,'Ok']
+        - Internal User can delete message
 
 * Change Password
     Button {
