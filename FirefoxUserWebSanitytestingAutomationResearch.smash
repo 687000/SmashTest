@@ -135,7 +135,7 @@
         Click [li,1st]
         Type {Org Admin Email} into 'Search'
         Click 'Contactor'
-        - Internal User can search Contactor
+        - Internal User can search Contact
 
 * Message
     Button {
