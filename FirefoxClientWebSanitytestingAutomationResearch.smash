@@ -122,6 +122,18 @@
 //    verify at page 'sandbox.moxo.com/web/#/downloadapp'
 //    - Client user login and will be redirected to the download app page
 
+* Message
+    Button {
+        props({
+            'Chat Button': `.micon-mep-chat, 2nd`,
+            'Message box':`.el-textarea__inner`
+        });
+    }
+        ..
+        Click 'Chat Button'
+        Type 'Test message[enter]' into 'Message box'
+        - Internal User can send message
+        
 Open Firefox
     Test Case for Firebox 'Christine' 'liujianiljn@gmail.com' 'Hfyz2017!' 'Random'
 
@@ -132,4 +144,5 @@ Open Firefox
     Org Admin Log Out
     Client User Sign Up
     Client User Login
+    Message
 
