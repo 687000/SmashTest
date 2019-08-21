@@ -7,8 +7,18 @@ Test cases covered:
 - Internal user can sign up 
 - Client user can sign up 
 - Internal user can login and view the timeline 
-- Client user login and will be redirected to the download app page
+- Internal user can search contactor
+- Internal user can send, edit, and delete messages
+- Internal user can change password
+- Client user login and view the timeline 
+- Client user can change password
 
 Supported browsers: 
 - Chrome 
-- Firefox
+- Firefox 
+
+Four branches: 
+- Chrome Internal User 
+- Chrome Client User 
+- Firefox Internal User 
+- Firefox Client User 
