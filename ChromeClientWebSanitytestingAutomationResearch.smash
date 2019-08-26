@@ -104,7 +104,7 @@
             Type {Random Email} into 'Email Address'
             Type '@mailinator.com' into 'Email Address'
             Click [button, 'Invite']
-            verify [div, 'Invite Sent'] is visible
+            Wait until [div, 'Invite Sent'] is visible (up to '5' secs)
 
     ..
     Find User from Mailinator
