@@ -34,9 +34,9 @@
 * User Sign Up
     Button {
         props({
-            'Password': `selector "#mxPage > div > div > div:nth-child(2) > div > div > div > div.nonsign-box > div > div:nth-child(2) > form > div:nth-child(4) > div > div > input"`,
-            'Accept Terms': `selector "#mxPage > div > div > div:nth-child(2) > div.main-view > div > div.nonsign-main-box > div > div > div:nth-child(2) > form > div.el-form-item.mx-el-checkbox-bordered.nonsign-input.el-form-item--feedback > div > label > span.el-checkbox__input > span"`,
-            'Create Account': `selector "#mxPage > div > div > div:nth-child(2) > div.main-view > div > div.nonsign-main-box > div > div > div:nth-child(2) > form > div:nth-child(6) > div > button > span"`,
+            'Password': `selector "#mxPage > div > div.nosign-bg > div.main-view > div > div.mx-nonsign-page > div:nth-child(2) > form > div:nth-child(4) > div > div > input"`,
+            'Accept Terms': `selector "#mxPage > div > div.nosign-bg > div.main-view > div > div.mx-nonsign-page > div:nth-child(2) > form > div.el-form-item.mx-el-checkbox-bordered.nonsign-input.el-form-item--feedback > div > label > span.el-checkbox__input > span"`,
+            'Create Account': `selector "#mxPage > div > div.nosign-bg > div.main-view > div > div.mx-nonsign-page > div:nth-child(2) > form > div:nth-child(6) > div > button > span"`,
             'Setting Skip': `selector "#mxPage > div > div > div:nth-child(2) > div.main-view > div > div.nonsign-main-box > div > div:nth-child(2) > div:nth-child(3) > div > button"`
 
         });
