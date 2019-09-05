@@ -102,10 +102,9 @@
 * Internal User Sign Up
     Button {
         props({
-            'Password': `selector "#mxPage > div > div > div:nth-child(2) > div > div > div > div.nonsign-box > div > div:nth-child(2) > form > div:nth-child(4) > div > div > input"`,
-            'Accept Terms': `selector "#mxPage > div > div > div:nth-child(2) > div.main-view > div > div.nonsign-main-box > div > div > div:nth-child(2) > form > div.el-form-item.mx-el-checkbox-bordered.nonsign-input.el-form-item--feedback > div > label > span.el-checkbox__input > span"`,
-            'Create Account': `selector "#mxPage > div > div > div:nth-child(2) > div.main-view > div > div.nonsign-main-box > div > div > div:nth-child(2) > form > div:nth-child(6) > div > button > span"`,
-            'Setting Skip': `selector "#mxPage > div > div > div:nth-child(2) > div.main-view > div > div.nonsign-main-box > div > div:nth-child(2) > div:nth-child(3) > div > button"`
+            'Password': `selector ".el-input--suffix > input:nth-child(1)"`,
+            'Accept Terms': `selector ".el-checkbox__inner"`,
+            'Create Account': `selector ".el-button > span:nth-child(1)"`,
         });
     }
 
