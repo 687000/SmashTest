@@ -82,8 +82,7 @@
         props({
             'Password': `selector ".el-input--suffix > input:nth-child(1)"`,
             'Accept Terms': `selector ".el-checkbox__inner"`,
-            'Create Account': `selector "#mxPage > div > div > div:nth-child(2) > div.main-view > div > div.nonsign-main-box > div > div > div:nth-child(2) > form > div:nth-child(6) > div > button > span"`,
-            'Setting Skip': `selector ".el-button > span:nth-child(1)"`
+            'Create Account': `selector ".el-button > span:nth-child(1)"`,
         });
     }
 
