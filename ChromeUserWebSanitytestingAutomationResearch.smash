@@ -115,7 +115,7 @@
     Find User from Mailinator
     Navigate to 'sandbox.moxo.com'
     Org Admin Add Internal Users Information
-    verify [div, 'User invited'] is visible
+    //verify [div, 'User invited'] is visible
     - Org admin can add new internal user
 
 * Internal User Sign Up ..
